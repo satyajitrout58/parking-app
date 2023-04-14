@@ -1,15 +1,9 @@
 import React from 'react'
-import useFetchParkingDetails from '../hooks/useFetchParkingDetails'
-
+import useFetchParkingDetails from '../../hooks/useFetchParkingDetails'
+import { ParkingDetailsType, updateParking } from './types/type'
 import './ParkingDetails.css'
 
-type ParkingDetailsType = {
-    id: string | undefined;
-    floor: number | undefined;
-    slotType: string | undefined;
-    parkingLot: string | undefined;
-}
-type updateParking = (e: React.MouseEvent<HTMLButtonElement>) => void
+
 const ParkingDetails = ({id, floor, slotType, parkingLot} : ParkingDetailsType) => {
     const [ getParkingDetails, updateParkingDetails] = useFetchParkingDetails()
     const releaseParking: updateParking = (e) => {

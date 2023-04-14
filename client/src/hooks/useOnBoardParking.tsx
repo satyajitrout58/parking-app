@@ -1,16 +1,5 @@
 import React, {useState} from "react";
-
-type FloorSdetails = {
-    floorNumber: number;
-    small: number;
-    Large: number;
-    Medium: number;
-    XLarge: number;
-  }
-  type Payload = {
-    floors: FloorSdetails[]
-    parkingLot: string
-  }
+import { Payload, } from './types/type'
 
 const useOnBoardParking = () => {
     const [loading, setLoading] = useState(false)

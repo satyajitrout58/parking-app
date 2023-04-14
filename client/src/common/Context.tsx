@@ -1,26 +1,6 @@
 import React, { createContext, useReducer } from "react";
+import { InitialStateType, ActionType, ContextType, ParkingContextType } from './types/type'
 
-type InitialStateType = {
-    id: undefined | string;
-    floor: undefined | number;
-    slotType: undefined | string;
-    parkingLot: string;
-}
-
-type ActionType = {
-    type: string,
-    payload?: any 
-}
-
-type ContextType = {
-    children: React.ReactNode
-}
-
-type ParkingContextType = {
-    state: InitialStateType;
-    dispatch : React.Dispatch<ActionType>;
-
-}
 const initialState : InitialStateType = {
     id: undefined,
     floor: undefined,

@@ -1,17 +1,7 @@
 import React, { useState, useContext } from "react";
 import {parkingContext} from '../common/Context'
+import {useFetchParkingDetailsType, ParkingDetailsType} from './types/type'
 
-type ParkingDetailsArgsType = {
-    parkingLot: string;
-    type?:string;
-    id?: string;
-}
-type UpdateParkingDetailsArgsType = {
-    id:string;
-    parkingLot: string;
-}
-type ParkingDetailsType = ({ type, parkingLot}: ParkingDetailsArgsType) => void
-type useFetchParkingDetailsType = () => (ParkingDetailsType)[]
 
 const useFetchParkingDetails:useFetchParkingDetailsType  = () => {
     const dispatch  = useContext(parkingContext)?.dispatch

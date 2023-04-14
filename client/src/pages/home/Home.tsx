@@ -1,13 +1,10 @@
 import React, { useContext, useState } from "react";
-import {parkingContext} from '../common/Context'
-import { slotType } from '../common/constant'
-import useFetchParkingDetails from '../hooks/useFetchParkingDetails'
-import ParkingDetails from '../component/ParkingDetails'
+import {parkingContext} from '../../common/Context'
+import { slotType } from '../../common/constant'
+import useFetchParkingDetails from '../../hooks/useFetchParkingDetails'
+import ParkingDetails from '../../component/parkingDetails/ParkingDetails'
+import {GetOptionList, KeyType, UpdateSelectedStateType} from './types/type'
 import './Home.css'
-
-type GetOptionList = () => React.ReactNode
-type KeyType = 'small' | 'Large' | 'Medium' | 'XLarge'
-type UpdateSelectedStateType = (e: React.FormEvent<HTMLSelectElement>) => void
 
 const Home = () => {
     const state = useContext(parkingContext)?.state

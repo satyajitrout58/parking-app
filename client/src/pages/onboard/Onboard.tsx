@@ -1,23 +1,8 @@
 import React, { useState } from 'react'
-import useOnBoardParking from '../hooks/useOnBoardParking'
+import useOnBoardParking from '../../hooks/useOnBoardParking'
+import {FloorSdetails, OnSlotChange, OnFloorNumberChangeType, Payload} from './types/type'
 import './Onboard.css'
-type FloorSdetails = {
-  floorNumber: number;
-  small: number;
-  Large: number;
-  Medium: number;
-  XLarge: number;
-}
-type KeyType = 'small' | 'Large' | 'Medium' | 'XLarge'
 
-type OnSlotChange = (e: React.ChangeEvent<HTMLInputElement>, key: number, slotType: KeyType) => void
-
-type OnFloorNumberChangeType = (e: React.ChangeEvent<HTMLInputElement>, key: number) => void
-
-type Payload = {
-  floors: FloorSdetails[]
-  parkingLot: string
-}
 const Onboard = () => {
   const [numberOfFloor, setNumberOfFloor] = useState(0)
   const [floors, setFloors] = useState<FloorSdetails[]>([])

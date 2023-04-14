@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ParkingContext from './common/Context'
-import Home from "./pages/Home";
-import Layout from "./pages/Layout";
-import Onboard from './pages/Onboard'
+import Home from "./pages/home/Home";
+import Layout from "./pages/layout/Layout";
+import Onboard from './pages/onboard/Onboard'
 
 export default function App() {
   return (
