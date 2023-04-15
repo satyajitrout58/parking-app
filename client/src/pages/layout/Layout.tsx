@@ -6,10 +6,10 @@ const Layout = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Allocate Parking</Link>
+            <Link to="/" data-testid='allocateLink'>Allocate Parking</Link>
           </li>
           <li>
-            <Link to="/onboard">Onboard Parking</Link>
+            <Link to="/onboard" data-testid='onBoardLink'>Onboard Parking</Link>
           </li>
         </ul>
       </nav>

@@ -54,50 +54,50 @@ const Onboard = () => {
   const generateFloor = () => {
     return !!floors.length && floors.map((val, key) => {
       return (
-        <li className='listItem' key={key} >
+        <li className='listItemParking' key={key} >
           <div className='labelCover'>
-            <label>Floor Number: {val.floorNumber}</label>
-            <span><input type='text' name='floorNumber' value={val.floorNumber} onChange={(e) => onFloorNumberChange(e, key)} /></span>
+            <label data-testid='floorNumber'>Floor Number: {val.floorNumber}</label>
+            <span><input type='text' data-testid='floornumberInput' name='floorNumber' value={val.floorNumber} onChange={(e) => onFloorNumberChange(e, key)} /></span>
           </div>
           <div className='labelCover'>
             <label>Small Slot: </label>
-            <span><input type='text' name='small' value={val.small} onChange={(e) => onSlotChange(e, key, 'small')} /></span>
+            <span><input type='text' data-testid='smallInput' name='small' value={val.small} onChange={(e) => onSlotChange(e, key, 'small')} /></span>
           </div>
           <div className='labelCover'>
             <label>Medium Slot: </label>
-            <span><input type='text' name='medium' value={val.Medium} onChange={(e) => onSlotChange(e, key, 'Medium')} /></span>
+            <span><input type='text' name='medium' data-testid='mediumInput' value={val.Medium} onChange={(e) => onSlotChange(e, key, 'Medium')} /></span>
           </div>
           <div className='labelCover'>
             <label>Larg Slot: </label>
-            <span><input type='text' name='Large' value={val.Large} onChange={(e) => onSlotChange(e, key, 'Large')} /></span>
+            <span><input type='text' name='Large' data-testid='LargeInput' value={val.Large} onChange={(e) => onSlotChange(e, key, 'Large')} /></span>
           </div>
           <div className='labelCover'>
             <label>XLarg Slot: </label>
-            <span><input type='text' name='xlarge' value={val.XLarge} onChange={(e) => onSlotChange(e, key, 'XLarge')} /></span>
+            <span><input type='text' name='xlarge' data-testid='xlargeInput' value={val.XLarge} onChange={(e) => onSlotChange(e, key, 'XLarge')} /></span>
           </div>
         </li>
       )
     })
   }
   return (
-    <div className='onBoardContainer'>
-      {loading && <div>Loading........</div>}
+    <div className='onBoardContainer' data-testid='onBoardContainer'>
+      {loading && <div data-testid='loader'>Loading........</div>}
       <form>
-        <div>
+        <div data-testid='noOfFloorContainer'>
           <label>No Of Floor</label>
-          <input type='text' name='floorNumber' value={numberOfFloor} onChange={updateFloor} />
+          <input type='text' name='floorNumber' data-testid='floorNumber' value={numberOfFloor} onChange={updateFloor} />
         </div>
-        <div>
+        <div data-testid='parkingLotContainer'>
           <label>Parking Lot</label>
-          <input type='text' name='parkingLot' value={parkingLot} onChange={(e) => setParkingLot(e.target.value)} />
+          <input type='text' name='parkingLot' data-testid='parkinglot' value={parkingLot} onChange={(e) => setParkingLot(e.target.value)} />
         </div>
 
         <ul>
           {generateFloor()}
 
-          {!!floors.length && (
-            <li>
-              <button onClick={OnboardParking}>OnBoard Parking</button>
+          {!!floors.length && parkingLot &&(
+            <li data-testid='onBoardParkingBtn'>
+              <button onClick={OnboardParking} data-testid='onboardBtn'>OnBoard Parking</button>
             </li>
           )}
 
