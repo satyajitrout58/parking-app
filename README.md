@@ -15,8 +15,10 @@ parkingApp
   
   server is running at http://localhost:5000
   
+  Mango DB is running at mongodb://127.0.0.1:27017/
   
-#Front is created with React ,React Router,  Typescript, Jest, react testing Libreary
+  
+#Frontend is created with React ,React Router,  Typescript, Jest, react testing Libreary
 
   to run the Frontned server you need to navigate to client folder 
   
