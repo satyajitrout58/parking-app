@@ -4,8 +4,7 @@ export type ParkingDetailsArgsType = {
     id?: string;
 }
 
-export type ParkingDetailsType = ({ type, parkingLot }: ParkingDetailsArgsType) => void
-export type useFetchParkingDetailsType = () => (ParkingDetailsType)[]
+export type ParkingDetailsType = ({ type, parkingLot, id }: ParkingDetailsArgsType) => Promise<any>
 
 export type FloorSdetails = {
     floorNumber: number;

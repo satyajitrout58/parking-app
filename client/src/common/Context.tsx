@@ -2,9 +2,9 @@ import React, { createContext, useReducer } from "react";
 import { InitialStateType, ActionType, ContextType, ParkingContextType } from './types/type'
 
 const initialState : InitialStateType = {
-    id: undefined,
-    floor: undefined,
-    slotType: undefined,
+    id: undefined | string,
+    floor: undefined | number,
+    slotType: undefined | string,
     parkingLot: 'test'
 }
 

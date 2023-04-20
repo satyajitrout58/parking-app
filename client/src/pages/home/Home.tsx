@@ -14,7 +14,7 @@ const Home = () => {
     const floor = state?.floor
 
     const [selectedType, setSelectedType] = useState<string>('small')
-    const [ getParkingDetails, updateParkingDetails] = useFetchParkingDetails()
+    const {getParkingDetails, updateParkingDetails} = useFetchParkingDetails()
 
     const getOptionList : GetOptionList = ()  => {
       return Object.keys(slotType).map((value): React.ReactNode => {
@@ -39,10 +39,10 @@ const Home = () => {
       <div data-testid='homeContainer'>
           <div data-testid='getParkingContainer' className='getParkingContainer'>  
               <form>
-                <select onChange={updateSelectedState}>
+                <select onChange={updateSelectedState} data-testid='select-type'>
                   {getOptionList()}
                 </select>
-                <button onClick={getParkingSlot}>Get Parking Slot</button>
+                <button onClick={getParkingSlot} data-testid='getParkingSlotBtn'>Get Parking Slot</button>
               </form>
               <ParkingDetails id={id} slotType={slot} floor={floor} parkingLot={parkingLot}/>
           </div>

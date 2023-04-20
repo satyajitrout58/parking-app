@@ -5,7 +5,7 @@ import './ParkingDetails.css'
 
 
 const ParkingDetails = ({id, floor, slotType, parkingLot} : ParkingDetailsType) => {
-    const [ getParkingDetails, updateParkingDetails] = useFetchParkingDetails()
+    const {getParkingDetails, updateParkingDetails} = useFetchParkingDetails()
     const releaseParking: updateParking = (e) => {
         if(id && parkingLot){
             updateParkingDetails({id, parkingLot })
